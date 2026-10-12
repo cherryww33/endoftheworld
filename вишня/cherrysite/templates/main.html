@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин ПК</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <nav>
+            <div>
+                <a href="/">PC-SHOP</a>
+            </div>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/catalog/">Каталог</a></li>
+                <li><a href="#">О магазине</a></li>
+            </ul>
+            <div>
+                <!-- Динамические данные заменены на статичные заглушки -->
+                <a href="/cart/">Корзина (0)</a>
+                
+                <!-- Блок пользователя: по умолчанию считаем, что пользователь не авторизован -->
+                <a href="/login/">Войти</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Блок для системных сообщений -->
+    <!-- В статичном HTML сообщений нет, поэтому блок скрыт или пуст -->
+    <!-- Если нужно показать пример сообщения, его нужно прописать вручную -->
+    <!--
+    <div>
+        <p>Товар успешно добавлен в корзину!</p>
+    </div>
+    -->
+
+    <!-- Основная рабочая область страницы -->
+    <main>
+        <!-- Здесь будет уникальный контент каждой страницы -->
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div>
+            <p>&copy; 2026 PC-SHOP</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+<button id="redirectBtn">Перейти на другой сайт</button>
+<script> 
+const button = document.getElementById('redirectBtn') 
+button.addEventListener('click', function() { window.location.href = "http://192.168.1.50:8080"; });
+</script>

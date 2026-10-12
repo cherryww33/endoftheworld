@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация</title>
+</head>
+<body>
+
+    <h1>Страница с информацией</h1>
+    
+    <!-- Пустой блок, куда JavaScript вставит данные -->
+    <div id="content"></div>
+
+    <script>
+        // Ждем полной загрузки страницы, чтобы элемент точно существовал
+        document.addEventListener('DOMContentLoaded', function() {
+            // Находим наш пустой блок
+            const block = document.getElementById("content");
+            
+            // Вставляем в него информацию. Это может быть обычный текст:
+            block.textContent = "вишня уже здесь. конец близок.";
+
+            // Или полноценный HTML-код со ссылками и форматированием:
+            // block.innerHTML = "<p><strong>Добро пожаловать!</strong></p><p>Здесь вы можете найти <a href='http://127.0.0.1'>подробную инструкцию</a>.</p>";
+        });
+    </script>
+
+</body>
+</html>
