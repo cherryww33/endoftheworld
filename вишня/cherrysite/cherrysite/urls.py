@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from cherryapp.views import main_func
+from cherryapp.views import main_func, info_func
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', main_func)
+    path('main/', main_func),
+    path('info/', info_func)
 ]
