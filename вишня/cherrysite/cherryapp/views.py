@@ -6,3 +6,6 @@ def main_func(request):
 
 def info_func(request):
     return render(request, template_name='info.html')
+
+def products_func(request):
+    return render(request, template_name='products.html')

@@ -59,3 +59,121 @@ button.addEventListener('click', function() { window.location.href = "info"; });
 <button class="glow-button">
     <img src="https://avatars.mds.yandex.net/i?id=262a2266283d3365985dd8d017ff6a1afc509308-5306827-images-thumbs&n=13" alt="тык">
 </button>
+<div class="product-card">
+    <!-- Галерея изображений (важно для техники: вид спереди, сзади, порты) -->
+    <div class="product-gallery">
+        <img src="images/laptop-main.jpg" alt="Ноутбук ProBook X15" class="main-photo" id="mainPhoto">
+        <div class="thumbnails">
+            <img src="images/laptop-ports.jpg" alt="Порты" onclick="changeImage('images/laptop-ports.jpg')">
+            <img src="images/laptop-keyboard.jpg" alt="Клавиатура" onclick="changeImage('images/laptop-keyboard.jpg')">
+        </div>
+    </div>
+
+    <!-- Основная информация -->
+    <div class="product-info">
+        <h1 class="product-title">Ноутбук ProBook X15 (2025)</h1>
+        
+        <!-- Рейтинг и отзывы -->
+        <div class="product-rating">
+            <span class="stars">★★★★★</span> (4.8) <a href="#reviews">128 отзывов</a>
+        </div>
+
+        <!-- Цена (с возможностью показать старую цену для акций) -->
+        <div class="product-pricing">
+            <span class="current-price">124 990 ₽</span>
+            <span class="old-price">139 990 ₽</span>
+        </div>
+
+        <!-- Ключевые преимущества (иконки) -->
+        <ul class="product-badges">
+            <li>Доставка за 2 часа</li>
+            <li>Гарантия 3 года</li>
+            <li>Рассрочка 0-0-24</li>
+        </ul>
+
+        <!-- Кнопка покупки -->
+        <button class="buy-button">Добавить в корзину</button>
+
+        <!-- Быстрый доступ к характеристикам -->
+        <div class="quick-specs">
+            <span><strong>Процессор:</strong> Intel Core i7-14700H</span>
+            <span><strong>ОЗУ:</strong> 16 ГБ DDR5</span>
+            <span><strong>Накопитель:</strong> 1 ТБ SSD NVMe</span>
+            <span><strong>Видеокарта:</strong> RTX 4060 8GB</span>
+        </div>
+    </div>
+</div>
+
+<!-- Блок подробных характеристик (сворачиваемый или табами) -->
+<div class="product-full-specs">
+    <h2>Технические характеристики</h2>
+    <table>
+        <tr>
+            <td>Экран</td>
+            <td>15.6" IPS, 1920x1080, 144 Гц</td>
+        </tr>
+        <tr>
+            <td>Порты</td>
+            <td>2x USB-A 3.2, 1x USB-C (Thunderbolt 4), HDMI 2.1, RJ-45</td>
+        </tr>
+        <tr>
+            <td>Батарея</td>
+            <td>90 Вт·ч, до 10 часов работы</td>
+        </tr>
+        <tr>
+            <td>Вес</td>
+            <td>1.98 кг</td>
+        </tr>
+    </table>
+</div>
+<button id="myButton" class="fade-in">computers</button>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    
+        /* --- 1. АНИМАЦИЯ КНОПКИ "computers" ПРИ ЗАГРУЗКЕ --- */
+        const loadButton = document.getElementById('myButton');
+        if (loadButton) {
+            // Небольшая задержка, чтобы страница успела отрисоваться
+            setTimeout(() => {
+                loadButton.classList.add('fade-in');
+            }, 400);
+        }
+    
+        /* --- 2. АНИМАЦИЯ ПРИ ПРОКРУТКЕ (Intersection Observer) --- */
+        const observerOptions = {
+            threshold: 0.1, // Срабатывает, когда 10% элемента видно
+            rootMargin: '0px 0px -50px 0px' // Зона срабатывания чуть выше края экрана
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Отписываемся, чтобы анимация не сработала снова, если прокрутить вверх
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+    
+        // Собираем все блоки, которые должны всплывать
+        const animatedElements = document.querySelectorAll('.product-card, .product-full-specs, .glow-button');
+    
+        animatedElements.forEach((el, index) => {
+            // Добавляем задержки для эффекта волны
+            if (index === 0) el.classList.add('delay-1');
+            if (index === 1) el.classList.add('delay-2');
+            if (index === 2) el.classList.add('delay-3');
+            
+            observer.observe(el);
+        });
+    
+        /* --- 3. ПЛАВНОЕ ПОЯВЛЕНИЕ ШАПКИ И ПОДВАЛА (они уже на экране) --- */
+        const header = document.querySelector('header');
+        const footer = document.querySelector('footer');
+        // Используем setTimeout, чтобы анимация сработала визуально после открытия страницы
+        setTimeout(() => {
+            if (header) header.classList.add('visible');
+            if (footer) footer.classList.add('visible');
+        }, 100);
+    });
+    </script>
