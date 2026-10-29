@@ -177,3 +177,80 @@ button.addEventListener('click', function() { window.location.href = "info"; });
         }, 100);
     });
     </script>
+    /*--- Блок корзины --- */
+    <div> 
+        <class> ="cart-icon-container" id="cartIconContainer">
+        <a href="#" id="cartIcon" title="Корзина">
+            <i class="fas fa-shopping-cart"></i>
+            <!-- Счетчик товаров, изначально скрыт -->
+            <span class="cart-count" id="cartCount">0</span>
+        </a>
+    </div>
+    </div>
+    </nav>
+<!-- 3. КАРТОЧКА ТОВАРА (добавляем кнопку "В корзину" и data-атрибуты) -->
+<div class="product-card">
+    <div class="product-gallery">
+        <img src="[https://via.placeholder.com/600x400](https://via.placeholder.com/600x400)" alt="Товар" class="main-photo" id="mainPhoto">
+        <div class="thumbnails">
+            <img src="[https://via.placeholder.com/150x100](https://via.placeholder.com/150x100)" data-full="[https://via.placeholder.com/600x400](https://via.placeholder.com/600x400)" alt="Миниатюра 1" class="active">
+            <img src="[https://via.placeholder.com/150x100/f00/fff](https://via.placeholder.com/150x100/f00/fff)" data-full="[https://via.placeholder.com/600x400/f00/fff](https://via.placeholder.com/600x400/f00/fff)" alt="Миниатюра 2">
+            <img src="[https://via.placeholder.com/150x100/0f0/000](https://via.placeholder.com/150x100/0f0/000)" data-full="[https://via.placeholder.com/600x400/0f0/000](https://via.placeholder.com/600x400/0f0/000)" alt="Миниатюра 3">
+        </div>
+    </div>
+
+    <div class="product-info">
+        <h1 class="product-title">Беспроводные наушники ProSound X1</h1>
+        
+        <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <a href="#">(24 отзыва)</a>
+        </div>
+
+        <ul class="product-badges">
+            <li>Новинка</li>
+            <li>Хит продаж</li>
+            <li>Бесплатная доставка</li>
+        </ul>
+
+        <div class="product-pricing">
+            <span class="current-price">12 990 ₽</span>
+            <span class="old-price">15 990 ₽</span>
+        </div>
+
+        <div class="quick-specs">
+            <span><strong>Цвет:</strong> Черный матовый</span>
+            <span><strong>Батарея:</strong> до 30 часов</span>
+            <span><strong>Шумоподавление:</strong> Активное (ANC)</span>
+        </div>
+
+        <!-- Кнопка добавления в корзину -->
+        <button class="buy-button" id="addToCartBtn" data-id="prod-001" data-name="Беспроводные наушники ProSound X1" data-price="12990">
+            <i class="fas fa-shopping-cart"></i> Добавить в корзину
+        </button>
+    </div>
+</div>
+
+<!-- 4. ПОЛНЫЕ ХАРАКТЕРИСТИКИ (без изменений) -->
+<div class="product-full-specs">
+    <h2>Полные характеристики</h2>
+    <table>
+        <tr>
+            <td>Тип</td>
+            <td>Внутриканальные</td>
+        </tr>
+        <tr>
+            <td>Версия Bluetooth</td>
+            <td>5.3</td>
+        </tr>
+        <tr>
+            <td>Вес</td>
+            <td>50 г</td>
+        </tr>
+        <tr>
+            <td>Гарантия</td>
+            <td>1 год</td>
+        </tr>
+    </table>
+</div>
+    
